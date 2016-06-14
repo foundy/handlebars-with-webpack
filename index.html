@@ -11,6 +11,86 @@
   <title>BOOTSTRAP CHAT EXAMPLE</title>
   <!-- BOOTSTRAP CORE STYLE CSS -->
   <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <script src="dist/templates.bundle.js"></script>
+  <script>
+  // History mock data
+  var mockHistory = [
+    {
+      msg: '안녕하십니까? 다나까 광글입니다.',
+      name: 'dalgos',
+      date: '23rd June at 5:00pm',
+      image: 'assets/imgs/boy-4.png'
+    },
+    {
+      msg: '반갑습니다. 인상이 좋으시네요.',
+      name: 'foundy',
+      date: '23rd June at 5:10pm',
+      image: 'assets/imgs/man.png'
+    },
+    {
+      msg: '별말씀을 다 하십니다.',
+      name: 'dalgos',
+      date: '23rd June at 5:11pm',
+      image: 'assets/imgs/boy-4.png'
+    },
+    {
+      msg: '원펀맨 아십니까?',
+      name: 'foundy',
+      date: '23rd June at 5:12pm',
+      image: 'assets/imgs/man.png'
+    },
+    {
+      msg: '덕이십니까?',
+      name: 'dalgos',
+      date: '23rd June at 5:13pm',
+      image: 'assets/imgs/boy-4.png'
+    }
+  ];
+
+  // Users mock data
+  var mockUsers = [
+    {
+      name: 'girl',
+      date: 'Active From 2 hours',
+      image: 'assets/imgs/girl.png'
+    },
+    {
+      name: 'girl-1',
+      date: 'Active From 2 hours',
+      image: 'assets/imgs/girl-1.png'
+    },
+    {
+      name: 'girl-2',
+      date: 'Active From 2 hours',
+      image: 'assets/imgs/girl-2.png'
+    },
+    {
+      name: 'girl-3',
+      date: 'Active From 2 hours',
+      image: 'assets/imgs/girl-3.png'
+    },
+    {
+      name: 'girl-4',
+      date: 'Active From 2 hours',
+      image: 'assets/imgs/girl-4.png'
+    },
+    {
+      name: 'girl-5',
+      date: 'Active From 2 hours',
+      image: 'assets/imgs/girl-5.png'
+    },
+    {
+      name: 'girl-6',
+      date: 'Active From 2 hours',
+      image: 'assets/imgs/girl-6.png'
+    },
+    {
+      name: 'girl-7',
+      date: 'Active From 2 hours',
+      image: 'assets/imgs/girl-7.png'
+    }
+  ];
+  </script>
 </head>
 <body style="font-family:Verdana">
   <div class="container">
@@ -23,6 +103,9 @@
             RECENT CHAT HISTORY
           </div>
           <div id="_history" class="panel-body">
+            <script>
+            document.getElementById('_history').innerHTML = Templates.History(mockHistory);
+            </script>
           </div>
           <div id="_footer" class="panel-footer">
             <div class="input-group">
@@ -40,11 +123,13 @@
             ONLINE USERS
           </div>
           <div id="_users" class="panel-body">
+            <script>
+            document.getElementById('_users').innerHTML = Templates.Users(mockUsers);
+            </script>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script src="dist/bundle.js"></script>
 </body>
 </html>

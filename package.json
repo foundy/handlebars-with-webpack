@@ -15,7 +15,7 @@
     "webpack"
   ],
   "author": "Foundy",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/foundy/handlebars-with-webpack/issues"
   },
