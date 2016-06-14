@@ -50,9 +50,14 @@
   // Users mock data
   var mockUsers = [
     {
-      name: 'girl',
+      name: '대표님',
       date: 'Active From 2 hours',
-      image: 'assets/imgs/girl.png'
+      image: 'assets/imgs/boy-3.png'
+    },
+    {
+      name: '인턴',
+      date: 'Active From 2 hours',
+      image: 'assets/imgs/boy-1.png'
     },
     {
       name: 'girl-1',
@@ -83,11 +88,6 @@
       name: 'girl-6',
       date: 'Active From 2 hours',
       image: 'assets/imgs/girl-6.png'
-    },
-    {
-      name: 'girl-7',
-      date: 'Active From 2 hours',
-      image: 'assets/imgs/girl-7.png'
     }
   ];
   </script>
@@ -102,11 +102,11 @@
           <div class="panel-heading">
             RECENT CHAT HISTORY
           </div>
-          <div id="_history" class="panel-body">
-            <script>
-            document.getElementById('_history').innerHTML = Templates.History(mockHistory);
-            </script>
-          </div>
+          <div id="_history" class="panel-body"></div>
+          <script>
+          // insert History
+          document.getElementById('_history').innerHTML = Templates.History(mockHistory);
+          </script>
           <div id="_footer" class="panel-footer">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Enter Message" />
@@ -120,16 +120,57 @@
       <div class="col-md-4">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            ONLINE USERS
+            ONLINE USERS | <span id="_change_users" style="cursor: pointer;">change</span>
           </div>
-          <div id="_users" class="panel-body">
-            <script>
-            document.getElementById('_users').innerHTML = Templates.Users(mockUsers);
-            </script>
-          </div>
+          <div id="_users" class="panel-body"></div>
+          <script>
+          // insert Users
+          document.getElementById('_users').innerHTML = Templates.Users(mockUsers);
+          </script>
         </div>
       </div>
     </div>
   </div>
+  <script>
+  // Reuse template
+  document.getElementById('_change_users').addEventListener('click', function () {
+    // e.g. Get data by AJAX
+    var ajaxUsers = [
+      {
+        name: 'boy-1',
+        date: 'Active From 2 hours',
+        image: 'assets/imgs/boy-1.png'
+      },
+      {
+        name: 'boy-2',
+        date: 'Active From 2 hours',
+        image: 'assets/imgs/boy-2.png'
+      },
+      {
+        name: 'boy-3',
+        date: 'Active From 2 hours',
+        image: 'assets/imgs/boy-3.png'
+      },
+      {
+        name: 'boy-4',
+        date: 'Active From 2 hours',
+        image: 'assets/imgs/boy-4.png'
+      },
+      {
+        name: 'boy-5',
+        date: 'Active From 2 hours',
+        image: 'assets/imgs/boy-5.png'
+      },
+      {
+        name: 'man',
+        date: 'Active From 2 hours',
+        image: 'assets/imgs/man.png'
+      }
+    ];
+
+    // inesrt Users
+    document.getElementById('_users').innerHTML = Templates.Users(ajaxUsers);
+  });
+  </script>
 </body>
 </html>
