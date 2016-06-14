@@ -1,4 +1,4 @@
-# handlebars-with-webpack
+# handlebars-with-webpack Sample
 
 ## Usage
 
