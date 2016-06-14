@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   entry: './assets/js/index.js',
@@ -15,5 +16,13 @@ module.exports = {
         loader: 'handlebars'
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: true
+      },
+      mangle: false
+    })
+  ]
 };
